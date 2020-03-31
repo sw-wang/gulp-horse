@@ -1,0 +1,48 @@
+@import 'animate.min';
+html, body{
+    margin: 0;
+    padding: 0;
+}
+ul, li{ list-style: none; margin: 0; padding: 0;}
+button{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    &:hover{
+        opacity: .9;
+    }
+}
+a{
+    @include animate(0.4s);
+}
+input, textarea {
+    outline: none;
+    resize: none;
+    font-family: Arial;
+}
+.clear{ clear: both; }
+::-webkit-input-placeholder { color: #ccc; }
+::-webkit-scrollbar  
+{  
+    width: 5px;  
+} 
+::-webkit-scrollbar-track  
+{  
+    border-radius: 10px;  
+    background-color: #F5F5F5;  
+} 
+
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    background-color: #666;  
+}  
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+a{text-decoration: none;}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- build:mate -->
+    <!-- endbuild -->
+    <title>Gulp Horse</title>
+    <!-- build:css -->
+    <!-- endbuild -->
+</head>
+
+<body>
+    <blockquote style="width: 400px; margin: 10% auto 0 auto;" class="layui-elem-quote">Hello Gulp Horse!</blockquote>
+    <!-- build:js -->
+    <!-- endbuild -->
+    <script babel>
+        layui.use(['layer', 'form'], function () {
+            var layer = layui.layer
+                , form = layui.form
+            let m = 'Gulp Horse'
+            layer.msg(`hello ${m}!`)
+            let fun = async () => {
+                let v = await new Promise((res, rej) => {
+                    setTimeout(() => {
+                        res('Kobe')
+                    }, 2000)
+                })
+            }
+            console.log(fun())
+            console.log('end!')
+        })
+    </script>
+</body>
+
+</html>

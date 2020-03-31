@@ -1,0 +1,130 @@
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+    position: fixed;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+//定位上下左右居中
+@mixin center {  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {  
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {  
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+    width: $width;
+    height: $height;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+    display: flex;
+    justify-content: $type;
+}
+// 旋转缩放
+@mixin rotate($direction: 0deg, $scaleX: 1, $scaleY: 1, $originX: 50%, $originY: 50%){
+    -moz-transform:rotate($direction) scale($scaleX,$scaleY) translate(0px,0px) skew(0deg,0deg);
+    -moz-transform-origin:$originX $originY;
+    -webkit-transform:rotate($direction) scale($scaleX,$scaleY) translate(0px,0px) skew(0deg,0deg);
+    -webkit-transform-origin:$originX $originY;
+    -o-transform:rotate($direction) scale($scaleX,$scaleY) translate(0px,0px) skew(0deg,0deg);
+    -o-transform-origin:$originX $originY;
+    transform:rotate($direction) scale($scaleX,$scaleY) translate(0px,0px) skew(0deg,0deg);
+    transform-origin:$originX $originY
+}
+// 动画
+@mixin animate($time: 1.5s, $function: linear){
+    -webkit-transition: all $time $function;
+    -moz-transition: all $time $function;
+    transition: all $time $function;
+}
+@mixin mini-border($direction: top,  $color: #efefef, $pseudo: before, $radius: 3px, $border-style: solid)
+{
+    &:#{$pseudo}
+    {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        height: 1px;
+
+        @if $direction == all
+        {
+            top: 0px;
+            left: 0px;
+            width: 200%;
+            height: 200%;
+            border: $border-style 1px $color;
+            @include borderRadius($radius);
+            -webkit-transform: scale(0.5);
+            -webkit-transform-origin: 0 0;
+        }
+        
+        @if $direction == top
+        {
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: $color;
+            -webkit-transform: scaleY(0.5);
+            -webkit-transform-origin: 0 0;
+        }
+
+        @if $direction == bottom
+        {
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: $color;
+            -webkit-transform: scaleY(0.5);
+            -webkit-transform-origin: 100% 100%;
+        }
+
+        @if $direction == left
+        {
+            top: 0px;
+            left: 0px;
+            width: 1px;
+            height: 100%;
+            background-color: $color;
+            -webkit-transform: scaleX(0.5);
+            -webkit-transform-origin: 0 0;
+        }
+
+        @if $direction == right
+        {
+            top: 0px;
+            right: 0px;
+            width: 1px;
+            height: 100%;
+            background-color: $color;
+            -webkit-transform: scaleX(0.5);
+            -webkit-transform-origin: 100% 100%;
+        }
+    }
+}

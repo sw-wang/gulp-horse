@@ -1,0 +1,41 @@
+{
+  "name": "gulp-horse",
+  "version": "1.0.0",
+  "description": "gulp-horse能快速使用Gulp搭建传统PC端多页面、框架iframe等应用，让传统前端项目也能够模块化和工程化。",
+  "main": "gulpfile.js",
+  "author": "winslow",
+  "private": true,
+  "license": "ISC",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production gulp",
+    "dev": "cross-env NODE_ENV=development gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "axios": "^0.19.2",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "cross-env": "^7.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "gulp-webserver": "^0.9.1",
+    "regenerator-runtime": "^0.13.5",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
